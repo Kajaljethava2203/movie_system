@@ -52,5 +52,4 @@ Route::resource('cast_show',CastShowController::class);
 Route::resource('movie_show',HomeController::class);
 Route::resource('/home',MoviehomeController::class);
 Route::resource('theater_show',\App\Http\Controllers\User\TheatershowController::class);
-//Route::get('seats_show',SeatshowController::class);
-Route::resource('seats_show',SeatshowController::class);
+//Route::resource('seats_show',SeatshowController::class);
