@@ -8,13 +8,27 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="">Popular Movies</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">Trending Movies</a>
-                </li>
+                    @if(Auth::guest())
+                        <a class="nav-link" href="{{route('login')}}">Login</a>
+                    @else
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('cast_show.index')}}">Cast</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('home.index')}}">Movies</a>
+                </li>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    @endif
                 </li>
             </ul>
         </div>

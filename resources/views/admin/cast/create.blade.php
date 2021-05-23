@@ -10,8 +10,8 @@
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
-            <h1>
-                 Cast Add
+            <h1 style="font-size: 24px">
+                 Create Cast
             </h1>
 
         </section>
@@ -19,12 +19,12 @@
         <!-- Main content -->
         <section class="content">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12" style="font-size: 15px">
 
                     <!-- /.box -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Cast</h3>
+                            <h3 class="card-title" style="font-size: 18px;padding: 5px">Cast</h3>
                         </div>
                         @if(count($errors) >0)
                             @foreach($errors->all() as $error)
@@ -43,22 +43,27 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="name">Name</label>
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                                    <input type="text" class="form-control"  style="font-size: 15px;height: 35px"id="name" name="name" placeholder="Name">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="bio">Bio</label>
-                                    <input type="text" class="form-control" id="bio" name="bio" placeholder="bio">
+                                    <input type="text" class="form-control" style="font-size: 15px;height: 35px" id="bio" name="bio" placeholder="bio">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="birth date">Release Year</label>
-                                    <input type="date" class="form-control" id="birth_date" name="birth_date" placeholder="birth date">
+                                    <input type="date" class="form-control" style="font-size: 15px;height: 35px" id="birth_date" name="birth_date" placeholder="birth date">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="image">Actor Image</label>
+                                    <input type="file"  name="image" id="image">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="list">Runtime</label>
-                                    <input type="text" class="form-control" id="list_of_movies" name="list_of_movies" placeholder="list of movies">
+                                    <input type="text" class="form-control" style="font-size: 15px;height: 35px" id="list_of_movies" name="list_of_movies" placeholder="list of movies">
                                 </div>
 
 
@@ -70,8 +75,8 @@
                             <!-- /.card-body -->
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                                <a type="button"  href="{{route('cast.index')}}" class="btn btn-warning">Back</a>
+                                <button type="submit" class="btn btn-primary" style="font-size: 18px">Submit</button>
+                                <a type="button"  href="{{route('cast.index')}}" class="btn btn-warning" style="font-size: 18px">Back</a>
                             </div>
                         </form>
                     </div>

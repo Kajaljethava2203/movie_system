@@ -36,30 +36,19 @@
                 <div class="card-header">
 
                         <div class="text-center">
-                            <a class='col-lg-offset-5 btn btn-success' href="{{route('movie.create')}}"> Add New Movie</a>
+                            <a class='col-lg-offset-5 btn btn-success' href="{{route('movie.create')}}" style="font-size: 15px;border-radius: 10px"> Add New Movie</a>
                         </div>
-
-                    <div class="card-tools">
-                        <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                            <i class="fas fa-minus"></i>
-                        </button>
-                        <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
                 </div>
                 <div class="card-body">
                     <div class="card">
-                        <div class="card-header">
-                            <h3 class="card-title">DataTable with default features</h3>
-                        </div>
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
-                                <tr>
+                                <tr style="font-size: 15px">
                                     <th>Sr. No</th>
                                     <th>Movie title</th>
+                                    <th>Movie Poster</th>
                                     <th>Movie Overview</th>
                                     <th>Release Year</th>
                                     <th>Runtime</th>
@@ -73,15 +62,15 @@
                                 @foreach($movies as $film)
                                     <tr>
                                         <td>{{$loop->index +1}}</td>
-                                        <td>{{$film->title}}</td>
-                                        <td>{{$film->overview}}</td>
-                                        <td>{{$film->release_year}}</td>
-                                        <td>{{$film->runtime}}</td>
-                                        <td>{{$film->cast}}</td>
-                                        <td><a href ="{{route('movie.edit',$film->id)}}"> Edit</td>
+                                        <td style="font-size: 14px">{{$film->title}}</td>
+                                        <td> <img src="{{$film ->poster}}" alt="poster" width="150px" height="200px"></td>
+                                        <td style="font-size: 14px">{{$film->overview}}</td>
+                                        <td style="font-size: 14px">{{$film->release_year}}</td>
+                                        <td style="font-size: 14px">{{$film->runtime}}</td>
+                                        <td style="font-size: 14px">{{$film->cast}}</td>
+                                        <td><a href ="{{route('movie.edit',$film->id)}}" class="btn btn-primary" style="font-size: 16px"> Edit</td>
 {{--                                            <td><a href="{{route('movies.edit',$film->id)}}"> Update--}}
 {{--                                                    <i class="far fa-edit"></i></a></td>--}}
-
 
 
                                            <td>
@@ -92,7 +81,7 @@
                                                     {{csrf_field()}}
                                                     {{method_field('DELETE')}}
                                                 </form>
-                                                <a href=""  onclick="if(confirm('ARE YOU SURE ,YOU WANT TO DELETE THIS?'))
+                                                <a href=""  class="btn btn-danger" style="font-size: 16px" onclick="if(confirm('ARE YOU SURE ,YOU WANT TO DELETE THIS?'))
                                                     {
                                                     event.preventDefault();
                                                     document.getElementById('delete-form-{{$film->id}}').submit();

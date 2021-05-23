@@ -1,6 +1,13 @@
-@extends('layouts.app')
+@extends('user/app')
 
-@section('content')
+@section('bg-img',asset('user/img/movie.jpg'))
+
+@section('title','Login Here')
+
+@section('sub-heading','')
+
+@section('main-content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -53,15 +60,19 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
+
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
-                                    </a>
+                                    </a><br>
                                 @endif
+                                    <button type="submit" class="btn btn-primary">
+                                        {{ __('Login') }}
+                                    </button>
+                                    <a href='{{route('register')}}' class="btn btn-primary">
+                                        Register
+                                    </a>
                             </div>
                         </div>
                     </form>

@@ -21,12 +21,12 @@
         <!-- Main content -->
         <section class="content">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12" style="font-size: 15px">
 
                     <!-- /.box -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Titles</h3>
+                            <h3 class="card-title" style="padding: 10px"></h3>
                         </div>
 
                         @if(count($errors) >0)
@@ -47,44 +47,45 @@
 
                                 <div class="form-group">
                                     <label for="title">Post Title</label>
-                                    <input type="text" class="form-control" id="title" name="title" placeholder="Title"
+                                    <input type="text" class="form-control" id="title" name="title" style="font-size: 15px;height: 35px" placeholder="Title"
                                            value="{{$movie->title}}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="overview">Movie overview</label>
-                                    <input type="text" class="form-control" id="overview" name="overview" placeholder="Sub Title"
+                                    <input type="text" class="form-control" id="overview" name="overview" placeholder="Sub Title" style="font-size: 15px;height: 35px"
                                            value="{{$movie->overview}}">
+{{--                                    <textarea class="form-control" style="height:150px;width: 100px" name="overview" placeholder="overview">{{ $movie->overview }}</textarea>--}}
                                 </div>
 
                                 <div class="form-group">
                                     <label for="year">Release Year</label>
-                                    <input type="text" class="form-control" id="release_year" name="release_year" placeholder="release year"
+                                    <input type="text" class="form-control" id="release_year" name="release_year" placeholder="release year" style="font-size: 15px;height: 35px"
                                            value="{{$movie->release_year}}">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="image">File input</label>
-                                    <input type="file"  name="poster" id="poster">
+                                    <label for="image">Movie Poster</label>
+                                    <input type="file"  name="poster" id="poster" value="{{$movie->poster}}">
                                 </div>
 
 
                                 <div class="form-group">
                                     <label for="runtime">Runtime</label>
                                     <input type="text" class="form-control" id="runtime" name="runtime" placeholder="runtime"
-                                           value="{{$movie->runtime}}">
+                                           style="font-size: 15px;height: 35px"  value="{{$movie->runtime}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="cast">Cast</label>
                                     <input type="text" class="form-control" id="cast" name="cast" placeholder="cast"
-                                           value="{{$movie->cast}}">
+                                           style="font-size: 15px;height: 35px"  value="{{$movie->cast}}">
                                 </div>
 
                             </div>
 
                             <div class="card-footer">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                                <a type="button"  href="{{route('movie.index')}}" class="btn btn-warning">Back</a>
+                                <button type="submit" class="btn btn-primary" style="font-size: 18px">Submit</button>
+                                <a type="button" style="font-size: 18px" href="{{route('movie.index')}}" class="btn btn-warning">Back</a>
                             </div>
                         </form>
                     </div>

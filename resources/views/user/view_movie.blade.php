@@ -8,16 +8,14 @@
 @section('main-content')
     <div class="container">
         <div class="row">
-        @foreach($movies as $movie)
-            <div class="col-4">
-                <div class="card" style="width: 20rem; height: 500px">
-                    <h4 class="card-title" style="text-align: center;font-family: 'Times New Roman';padding-top: 15px">{{$movie->title}}</h4>
-                    <hr>
-                    <a href=""> <img src="{{$movie->poster}}" class="card-img-top" alt="..." height="320px" width="250px"></a>
-                        <p class="card-text" style="padding: 5px">Released Year: {{$movie->release_year}}</p>
-                </div>
-            </div>
-        @endforeach
+            <h1 style="color: blue;font-size: 26px">Bollywood</h1>
+            <h3 style="color: grey;font-weight: 600;font-size: 20px">
+                Hindi cinema, often known as Bollywood and formerly as Bombay cinema, is the Indian Hindi-language film industry based in Mumbai (formerly Bombay). The term is a portmanteau of "Bombay" and "Hollywood".
+            </h3>
+            <a href="{{ url('view_movies') }}" class="uppercase bg-transparent border-2 border-gray-100 text-white hover:text-red-500 text-xs font-extrabold py-3 px-5 rounded-3xl">
+                Find Out More
+            </a>
+        </div>
     </div>
     <hr>
 @endsection

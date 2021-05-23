@@ -21,7 +21,7 @@
 
                     <div class="col-sm-6">
                         <ol class="breadcrumb ">
-                            <li class="breadcrumb-item" style="font-size: 25px"><a href="#">Cast Details</a></li>
+                            <li class="breadcrumb-item" style="font-size: 25px"><a href="#">Theater Details</a></li>
 
                         </ol>
                     </div>
@@ -35,11 +35,8 @@
             <!-- Default box -->
             <div class="card">
                 <div class="card-header">
-{{--                    <h3 class="card-title">Cast</h3>--}}
-
-
                     <div class="text-center">
-                        <a class='col-lg-offset-5 btn btn-success' href="{{route('cast.create')}}" style="font-size: 15px;border-radius: 10px"> Add New Cast</a>
+                        <a class='col-lg-offset-5 btn btn-success' href="{{route('theater.create')}}" style="font-size: 15px;border-radius: 10px"> Add New Theater</a>
                     </div>
 
                 </div>
@@ -51,11 +48,9 @@
                                 <thead>
                                 <tr style="font-size: 15px">
                                     <th>Sr. No</th>
-                                    <th>Name</th>
-                                    <th>Actor Image</th>
-                                    <th>Bio</th>
-                                    <th>Birth Date</th>
-                                    <th>List of Movies</th>
+                                    <th>Theater Name</th>
+                                    <th>City Name</th>
+                                    <th>Ratting</th>
                                     <th></th>
                                     <th></th>
 
@@ -63,24 +58,22 @@
                                 </thead>
                                 <tbody>
 
-                                @foreach($casts as $cast)
+                                @foreach($theaters as $theater)
                                     <tr>
                                         <td style="font-size: 14px">{{$loop->index +1}}</td>
-                                        <td style="font-size: 14px">{{$cast->name}}</td>
-                                        <td> <img src="{{$cast ->image}}" alt="image" width="150px" height="200px"></td>
-                                        <td style="font-size: 14px">{{$cast->bio}}</td>
-                                        <td style="font-size: 14px">{{$cast->birth_date}}</td>
-                                        <td style="font-size: 14px">{{$cast->list_of_movies}}</td>
-                                        <td><a href ="{{route('cast.edit',$cast->id)}}" class="btn btn-primary" style="font-size: 16px"> Edit</td>
+                                        <td style="font-size: 14px">{{$theater->theatre_name}}</td>
+                                        <td style="font-size: 14px">{{$theater->city_name}}</td>
+                                        <td style="font-size: 14px">{{$theater->ratting}}</td>
+                                        <td><a href ="{{route('theater.edit',$theater->id)}}" class="btn btn-primary" style="font-size: 16px"> Edit</td>
                                         {{--                                            <td><a href="{{route('movies.edit',$film->id)}}"> Update--}}
                                         {{--                                                    <i class="far fa-edit"></i></a></td>--}}
 
 
 
                                         <td>
-                                            <form id="delete-form-{{$cast->id}}"
+                                            <form id="delete-form-{{$theater->id}}"
                                                   method="post"
-                                                  action="{{route('cast.destroy',$cast->id)}}"
+                                                  action="{{route('theater.destroy',$theater->id)}}"
                                                   style="display: none">
                                                 {{csrf_field()}}
                                                 {{method_field('DELETE')}}
@@ -88,7 +81,7 @@
                                             <a href="" class="btn btn-danger" style="font-size: 16px"  onclick="if(confirm('ARE YOU SURE ,YOU WANT TO DELETE THIS?'))
                                                 {
                                                 event.preventDefault();
-                                                document.getElementById('delete-form-{{$cast->id}}').submit();
+                                                document.getElementById('delete-form-{{$theater->id}}').submit();
                                                 }else
                                                 {
                                                 event.preventDefault();

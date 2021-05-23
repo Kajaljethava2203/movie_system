@@ -12,7 +12,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1 style="font-size: 24px">
-                Cast Editors
+                Theater Editors
             </h1>
 
         </section>
@@ -25,7 +25,7 @@
                     <!-- /.box -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title" style="font-size: 18px;padding: 5px">Cast</h3>
+                            <h3 class="card-title" style="font-size: 18px;padding: 5px">Theater</h3>
                         </div>
 
                         @if(count($errors) >0)
@@ -38,48 +38,35 @@
                         @if (session()->has('message'))
                             <p class="alert-default-success">{{session('message')}}</p>
                         @endif
-                        <form role="form" action="{{route('cast.update',$cast->id)}}" method="post" enctype="multipart/form-data">
+                        <form role="form" action="{{route('theater.update',$theater->id)}}" method="post" enctype="multipart/form-data">
 
                             {{csrf_field()}}
                             {{method_field('PATCH')}}
                             <div class="card-body">
 
                                 <div class="form-group">
-                                    <label for="name">Post Title</label>
-                                    <input type="text" class="form-control" style="font-size: 15px;height: 35px" id="name" name="name" placeholder="Name"
-                                           value="{{$cast->name}}">
+                                    <label for="name">Theater Name</label>
+                                    <input type="text" class="form-control" style="font-size: 15px;height: 35px" id="name" name="name" placeholder="Enter Theater Name"
+                                           value="{{$theater->theatre_name}}">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="bio">Bio</label>
-                                    <input type="text" class="form-control" style="font-size: 15px;height: 35px" id="bio" name="bio" placeholder="bio"
-                                           value="{{$cast->bio}}">
+                                    <label for="city">City Name</label>
+                                    <input type="text" class="form-control" style="font-size: 15px;height: 35px" id="city" name="city" placeholder="Enter City Name"
+                                           value="{{$theater->city_name}}">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="year">Birth date</label>
-                                    <input type="date" class="form-control" style="font-size: 15px;height: 35px" id="birth_date" name="birth_date" placeholder="birth date"
-                                           value="{{$cast->birth_date}}">
+                                    <label for="year">Ratting</label>
+                                    <input type="number" class="form-control" style="font-size: 15px;height: 35px" id="rate" name="rate" placeholder="Enter Ratting"
+                                           value="{{$theater->ratting}}">
                                 </div>
-
-                                <div class="form-group">
-                                    <label for="image">Actor Image</label>
-                                    <input type="file"  name="image" id="image" value="{{$cast->image}}">
-                                </div>
-
-
-                                <div class="form-group">
-                                    <label for="runtime">List Of Movies</label>
-                                    <input type="text" class="form-control" style="font-size: 15px;height: 35px" id="list_of_movies" name="list_of_movies" placeholder="list of movies"
-                                           value="{{$cast->list_of_movies}}">
-                                </div>
-
 
                             </div>
 
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary" style="font-size: 18px">Submit</button>
-                                <a type="button"  href="{{route('cast.index')}}" style="font-size: 18px" class="btn btn-warning">Back</a>
+                                <a type="button"  href="{{route('theater.index')}}" style="font-size: 18px" class="btn btn-warning">Back</a>
                             </div>
                         </form>
                     </div>

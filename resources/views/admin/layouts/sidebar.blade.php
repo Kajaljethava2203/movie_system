@@ -18,19 +18,25 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class
                      with font-awesome or any other icon font library -->
-                <li class="header" style="font-size: 18px;color: #cccccc;">DASHBOARD</li>
+                <li class="header" style="font-size: 20px;color: #cccccc;">DASHBOARD</li>
                 <li class="nav-item menu-open">
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{route('movie.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p style="color:#1aa67d;font-size: 15px">Movies</p>
+                                <p style="color:#1aa67d;font-size: 22px">Movies</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{route('cast.index')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p style="color:#1aa67d;font-size: 15px">Cast</p>
+                                <p style="color:#1aa67d;font-size: 22px">Cast</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('theater.index')}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p style="color:#1aa67d;font-size: 22px">Theater</p>
                             </a>
                         </li>
                     </ul>
