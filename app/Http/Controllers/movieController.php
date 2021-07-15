@@ -16,6 +16,7 @@ class movieController extends Controller
     {
         $movies = Movie::all();
         return view('admin/Movies/show',compact('movies'));
+
     }
 
     /**
